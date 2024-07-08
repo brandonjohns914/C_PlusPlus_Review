@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		412EC6C22C3B380F001F99A0 /* ArrayList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 412EC6C02C3B380F001F99A0 /* ArrayList.cpp */; };
 		412EC6C42C3B3B0D001F99A0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 412EC6C32C3B3B0D001F99A0 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -25,12 +24,12 @@
 
 /* Begin PBXFileReference section */
 		412EC69F2C3B33BC001F99A0 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		412EC6C02C3B380F001F99A0 /* ArrayList.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ArrayList.cpp; sourceTree = "<group>"; };
 		412EC6C12C3B380F001F99A0 /* ArrayList.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ArrayList.hpp; sourceTree = "<group>"; };
 		412EC6C32C3B3B0D001F99A0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		4150AAC72C34D0D2001654D7 /* PointersAndArrayBasedLists */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PointersAndArrayBasedLists; sourceTree = BUILT_PRODUCTS_DIR; };
 		4150AB042C38CB98001654D7 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
 		4150AB0A2C38CF3E001654D7 /* libkmodc++.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libkmodc++.a"; path = "usr/lib/libkmodc++.a"; sourceTree = SDKROOT; };
+		4190D7BD2C3B57F300B1D1BC /* ArrayList1.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ArrayList1.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				412EC6C32C3B3B0D001F99A0 /* main.cpp */,
-				412EC6C02C3B380F001F99A0 /* ArrayList.cpp */,
 				412EC6C12C3B380F001F99A0 /* ArrayList.hpp */,
+				4190D7BB2C3B57DD00B1D1BC /* ArrayListPractice */,
 			);
 			path = PointersAndArrayBasedLists;
 			sourceTree = "<group>";
@@ -79,6 +78,14 @@
 				4150AB042C38CB98001654D7 /* libc++.1.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4190D7BB2C3B57DD00B1D1BC /* ArrayListPractice */ = {
+			isa = PBXGroup;
+			children = (
+				4190D7BD2C3B57F300B1D1BC /* ArrayList1.hpp */,
+			);
+			path = ArrayListPractice;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -116,7 +123,7 @@
 				};
 			};
 			buildConfigurationList = 4150AAC22C34D0D2001654D7 /* Build configuration list for PBXProject "PointersAndArrayBasedLists" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -139,7 +146,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				412EC6C42C3B3B0D001F99A0 /* main.cpp in Sources */,
-				412EC6C22C3B380F001F99A0 /* ArrayList.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +278,7 @@
 				DEVELOPMENT_TEAM = CWCBRR328H;
 				ENABLE_HARDENED_RUNTIME = YES;
 				EXCLUDED_ARCHS = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -285,6 +292,7 @@
 				DEVELOPMENT_TEAM = CWCBRR328H;
 				ENABLE_HARDENED_RUNTIME = YES;
 				EXCLUDED_ARCHS = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				"GCC_WARN_64_TO_32_BIT_CONVERSION[arch=*]" = YES;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";

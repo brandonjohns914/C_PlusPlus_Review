@@ -13,9 +13,18 @@
 #include<cassert>
 using namespace std;
 
+void arrayListExample();
+
 int main() {
-    ArrayListType<int> intList(100);
-    ArrayListType<string> stringList;
+    arrayListExample();
+    
+    return 0;
+}
+
+void arrayListExample() {
+    int size = 100;
+    ArrayListType<int> intList(size);
+    ArrayListType<string> stringList(size);
     
     int number;
     cout << "Enter 5 integers: ";
@@ -40,11 +49,12 @@ int main() {
     cout << "Enter 5 strings: ";
     for (int counter = 0; counter < 5; counter++)
     {
-        cin >> number;
+        cin >> str ;
         stringList.insertAt(counter, str);
     }
     cout << endl;
-    cout << "The list you entered is: " << endl; stringList.print();
+    cout << "The list you entered is: " << endl;
+    stringList.print();
     cout << endl;
     cout << "Enter the item to be deleted: " ;
     cin >> str;
@@ -53,5 +63,4 @@ int main() {
 
     stringList.print();
     cout << endl;
-    return 0;
 }

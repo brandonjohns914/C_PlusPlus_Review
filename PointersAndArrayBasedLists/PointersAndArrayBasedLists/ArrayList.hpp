@@ -90,6 +90,14 @@ public:
 #endif /* ArrayList_hpp */
 
 
+//template<class Type>
+//ArrayListType<Type>::ArrayListType() {
+//    maxSize = 100;
+//    list = new Type[maxSize];
+//    length = 0;
+//}
+
+
 template<class Type>
 ArrayListType<Type>:: ArrayListType(int size)
 {
@@ -101,10 +109,10 @@ ArrayListType<Type>:: ArrayListType(int size)
     else {
         maxSize = size;
     }
-    
+   
     length = 0;
     list = new Type[maxSize];
-    
+   
     assert(list != NULL);
 }
 
@@ -115,7 +123,7 @@ ArrayListType<Type>:: ArrayListType(const ArrayListType<Type> & otherList){
     length = otherList.length;
     list = new Type[maxSize];
     assert(list!= NULL);
-    
+   
     for (int i = 0; i< length; i++) {
         list[i] = otherList.list[i];
     }
@@ -134,7 +142,7 @@ const ArrayListType<Type> & ArrayListType<Type>:: operator= (const ArrayListType
         length = otherList.maxSize;
         list = new Type[maxSize];
         assert(list != NULL);
-        
+       
         for(int i = 0; i < length; i++) {
             list[i] = otherList.list[i];
         }
@@ -178,19 +186,26 @@ bool ArrayListType<Type>:: isItemAtEqual(int location, const Type& item) const{
 
 template<class Type>
 void ArrayListType<Type>:: insertAt(int location, const Type& insertItem) {
+    // location cannot be less than zero or larger than the maxsize
     if(location < 0 || location >= maxSize) {
         cerr<< "Position is out of range"<<endl;
     }
     else {
+        // length cannot be larger than maxsize because that makes the list full
         if (length >= maxSize) {
             cerr<< "List is full"<<endl;
         }
         else {
-            for(int i = 0; i > location; i--) {
+            // setting the index to the length and the length must be greater than the location.
+            // starting at the last item work down
+            for(int i = length; i > location; i--) {
                 list[i] = list[i-1];
-                
+               
             }
+            // insert the item at the location
             list[location] = insertItem;
+            
+            //increase the size by the new item.
             length++;
         }
     }
@@ -198,11 +213,14 @@ void ArrayListType<Type>:: insertAt(int location, const Type& insertItem) {
 
 template<class Type>
 void ArrayListType<Type>:: insertEnd(const Type& insertItem) {
+    // length cannot be larger than maxsize
     if (length >= maxSize) {
         cerr << "List is full" <<endl;
     }
     else {
+        // at the last item in the array set that to the item
         list[length] == insertItem;
+        // increase the the size by 1 
         length++;
     }
 }
@@ -215,8 +233,8 @@ void ArrayListType<Type>:: removeAt(int location) {
     else {
         for(int i = location; i < length - 1; i++) {
             list[i] = list[i+1];
-            
-            
+           
+           
         }
         length--;
     }
@@ -264,17 +282,17 @@ int ArrayListType<Type>:: sequentialSearch(const Type& item) const {
         return -1;
     }
 }
-    
+   
 template<class Type>
 void ArrayListType<Type>:: remove(const Type& removeItem) {
     int location;
-    
+   
     if (length == 0) {
         cerr<<"cannot delete from an empty list"<<endl;
     }
     else {
         location = sequentialSearch(removeItem);
-        
+       
         if (location != -1){
             removeAt(location);
         }
@@ -288,7 +306,7 @@ void ArrayListType<Type>:: remove(const Type& removeItem) {
 template<class Type>
 void ArrayListType<Type>:: insert(const Type& instertItem) {
     int location;
-    
+   
     if (length == 0) {
         list[length++] == instertItem;
     }
@@ -297,7 +315,7 @@ void ArrayListType<Type>:: insert(const Type& instertItem) {
     }
     else {
         location = sequentialSearch(instertItem);
-        
+       
         if (location == -1) {
             list[length++];
         }
