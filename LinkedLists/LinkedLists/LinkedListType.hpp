@@ -29,6 +29,10 @@ public:
     int length() const;
     void destoryList();
     
+    void reversePrint(nodeType<Type>* current) const;
+    
+    void printListReverse() const;
+    
     Type front() const;
     Type back() const;
     
@@ -91,6 +95,20 @@ void linkedListType<Type>:: print() const{
         cout<< current->link << " "<<endl;
         current = current-> link;
     }
+}
+
+
+template<class Type>
+void linkedListType<Type>:: reversePrint(nodeType<Type>* current) const {
+    if (current != NULL){
+        reversePrint(current->link);
+        cout<< current->info << " " <<endl; 
+    }
+}
+template<class Type>
+void linkedListType<Type>:: printListReverse() const {
+    reversePrint(first);
+    cout<<endl;
 }
 
 template<class Type>
