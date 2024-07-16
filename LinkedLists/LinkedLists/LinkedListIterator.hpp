@@ -10,13 +10,9 @@
 
 #include <stdio.h>
 #include <iostream>
+#include "NodeType.hpp"
 using namespace std;
 
-template<class Type>
-struct nodeType {
-    Type info;
-    nodeType<Type> *link;
-};
 
 template<class Type>
 class linkedListIterator {

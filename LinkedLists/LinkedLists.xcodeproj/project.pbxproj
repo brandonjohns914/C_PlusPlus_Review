@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41B488E12C472962008EB459 /* LinkedStackType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B488DF2C472962008EB459 /* LinkedStackType.cpp */; };
 		41F9B1EF2C3DFED600DFA60C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41F9B1EE2C3DFED600DFA60C /* main.cpp */; };
 		41F9B1FA2C3E0AAD00DFA60C /* LinkedListIterator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41F9B1F82C3E0AAD00DFA60C /* LinkedListIterator.cpp */; };
 		41F9B1FE2C3E0E8600DFA60C /* LinkedListType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41F9B1FC2C3E0E8600DFA60C /* LinkedListType.cpp */; };
@@ -27,6 +28,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		41B488DB2C472439008EB459 /* StackADT.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = StackADT.hpp; sourceTree = "<group>"; };
+		41B488DD2C472914008EB459 /* NodeType.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NodeType.hpp; sourceTree = "<group>"; };
+		41B488DF2C472962008EB459 /* LinkedStackType.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LinkedStackType.cpp; sourceTree = "<group>"; };
+		41B488E02C472962008EB459 /* LinkedStackType.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LinkedStackType.hpp; sourceTree = "<group>"; };
 		41F9B1EB2C3DFED600DFA60C /* LinkedLists */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LinkedLists; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F9B1EE2C3DFED600DFA60C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		41F9B1F82C3E0AAD00DFA60C /* LinkedListIterator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LinkedListIterator.cpp; sourceTree = "<group>"; };
@@ -70,10 +75,13 @@
 			isa = PBXGroup;
 			children = (
 				41F9B1EE2C3DFED600DFA60C /* main.cpp */,
+				41B488DD2C472914008EB459 /* NodeType.hpp */,
 				41F9B1F92C3E0AAD00DFA60C /* LinkedListIterator.hpp */,
 				41F9B1FD2C3E0E8600DFA60C /* LinkedListType.hpp */,
 				41F9B2002C3F4E1100DFA60C /* UnorderedLinkedLists.hpp */,
 				41F9B2032C3F58D900DFA60C /* OrderedLinkedLists.hpp */,
+				41B488DB2C472439008EB459 /* StackADT.hpp */,
+				41B488E02C472962008EB459 /* LinkedStackType.hpp */,
 				41F9B1FB2C3E0AB600DFA60C /* CPP */,
 			);
 			path = LinkedLists;
@@ -82,6 +90,7 @@
 		41F9B1FB2C3E0AB600DFA60C /* CPP */ = {
 			isa = PBXGroup;
 			children = (
+				41B488DF2C472962008EB459 /* LinkedStackType.cpp */,
 				41F9B2022C3F58D900DFA60C /* OrderedLinkedLists.cpp */,
 				41F9B1FF2C3F4E1100DFA60C /* UnorderedLinkedLists.cpp */,
 				41F9B1FC2C3E0E8600DFA60C /* LinkedListType.cpp */,
@@ -148,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41F9B1FE2C3E0E8600DFA60C /* LinkedListType.cpp in Sources */,
+				41B488E12C472962008EB459 /* LinkedStackType.cpp in Sources */,
 				41F9B1FA2C3E0AAD00DFA60C /* LinkedListIterator.cpp in Sources */,
 				41F9B2042C3F58D900DFA60C /* OrderedLinkedLists.cpp in Sources */,
 				41F9B1EF2C3DFED600DFA60C /* main.cpp in Sources */,
