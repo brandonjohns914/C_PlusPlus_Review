@@ -11,11 +11,14 @@
 #include<array>
 #include<string>
 #include<cassert>
+#include "StackType.hpp"
 using namespace std;
 
 void arrayListExample();
 void largestExample();
 int largest(const int list[], int lowerIndex, int upperIndex);
+void StackExample();
+void testCopyConstructor(stackType<int> otherStack);
 int main() {
     arrayListExample(); 
     //largestExample();
@@ -89,5 +92,49 @@ int largest(const int list[], int lowerIndex, int upperIndex){
         else {
             return max;
         }
+    }
+}
+
+void StackExample(){
+    stackType<int> stack(50);
+    stackType<int> copyStack(50);
+    stackType<int> dummyStack(500);
+    
+    stack.initializeStack();
+    stack.push(23);
+    stack.push(30);
+    stack.push(11);
+    copyStack = stack;
+    
+    cout<<"Stack: "<<endl;
+    
+    while(!copyStack.isEmptyStack()){
+        cout<< copyStack.top() << " ";
+        copyStack.pop();
+    }
+    cout<<endl;
+    
+    testCopyConstructor(stack);
+    
+    if(!stack.isEmptyStack()){
+        cout<<"The original stack is not empty"<<endl;
+        cout<<"the top element of the original stack: "<< copyStack.top() <<endl;
+    }
+    dummyStack = stack;
+    
+    cout<<"Elements of dummy stack: "<<endl;
+    
+    while(!dummyStack.isEmptyStack()){
+        cout<< dummyStack.top() << " " <<endl;
+        dummyStack.pop();
+    }
+    cout<<endl;
+    
+}
+
+void testCopyConstructor(stackType<int> otherStack){
+    if(!otherStack.isEmptyStack()){
+        cout<<"The original stack is not empty"<<endl;
+        cout<<"the top element of the original stack: "<< otherStack.top() <<endl;
     }
 }
