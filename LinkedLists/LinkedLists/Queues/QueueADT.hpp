@@ -23,7 +23,7 @@ public:
     virtual Type back() const = 0;
     
     virtual void addQueue(const Type& item) = 0;
-    virtual void deleteQueue() = 0;
+    virtual void deleteQueue() = 0; 
 };
 
 #endif /* QueueADT_hpp */

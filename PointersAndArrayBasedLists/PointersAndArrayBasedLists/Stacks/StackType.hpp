@@ -23,7 +23,7 @@ public:
     
     bool isEmptyStack() const;
     
-    bool isFullStack() const; 
+    bool isFullStack() const;
     
     void push(const Type& item);
     
@@ -116,6 +116,18 @@ stackType<Type>:: stackType(int stackSize ) {
 
 template<class Type>
 stackType<Type>:: stackType(const stackType<Type> & otherStack){
+
+    list = NULL;
+    copyStack(otherStack);
+}
+
+template<class Type>
+stackType<Type>:: ~stackType(){
+    delete [] list;
+}
+
+template<class Type>
+void stackType<Type>:: copyStack(const stackType<Type>& otherStack){
     delete [] list;
     
     maxStackSize = otherStack.maxStackSize;
@@ -126,15 +138,5 @@ stackType<Type>:: stackType(const stackType<Type> & otherStack){
     for(int i = 0; i < stackTop; i++){
         list[i] = otherStack.list[i];
     }
-}
-
-template<class Type>
-stackType<Type>:: ~stackType(){
-    delete [] list;
-}
-
-template<class Type>
-void stackType<Type>:: copyStack(const stackType<Type>& otherStack){
-    list = NULL;
-    copyStack(otherStack);
+    
 }
