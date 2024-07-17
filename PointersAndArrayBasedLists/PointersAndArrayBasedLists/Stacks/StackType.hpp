@@ -23,7 +23,7 @@ public:
     
     bool isEmptyStack() const;
     
-    bool isFullStack() const;
+    bool isFullStack() const; 
     
     void push(const Type& item);
     

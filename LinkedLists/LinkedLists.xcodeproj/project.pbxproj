@@ -58,6 +58,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41B488E52C473617008EB459 /* Stacks */ = {
+			isa = PBXGroup;
+			children = (
+				41B488E32C4731B8008EB459 /* UnorderedLinkedStack.hpp */,
+				41B488DB2C472439008EB459 /* StackADT.hpp */,
+				41B488E02C472962008EB459 /* LinkedStackType.hpp */,
+			);
+			path = Stacks;
+			sourceTree = "<group>";
+		};
 		41F9B1E22C3DFED600DFA60C = {
 			isa = PBXGroup;
 			children = (
@@ -82,10 +92,8 @@
 				41F9B1F92C3E0AAD00DFA60C /* LinkedListIterator.hpp */,
 				41F9B1FD2C3E0E8600DFA60C /* LinkedListType.hpp */,
 				41F9B2002C3F4E1100DFA60C /* UnorderedLinkedLists.hpp */,
-				41B488E32C4731B8008EB459 /* UnorderedLinkedStack.hpp */,
 				41F9B2032C3F58D900DFA60C /* OrderedLinkedLists.hpp */,
-				41B488DB2C472439008EB459 /* StackADT.hpp */,
-				41B488E02C472962008EB459 /* LinkedStackType.hpp */,
+				41B488E52C473617008EB459 /* Stacks */,
 				41F9B1FB2C3E0AB600DFA60C /* CPP */,
 			);
 			path = LinkedLists;

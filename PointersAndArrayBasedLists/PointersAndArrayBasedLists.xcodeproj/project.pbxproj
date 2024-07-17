@@ -10,6 +10,8 @@
 		4103717F2C40925800E9A66C /* StackADT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4103717D2C40925800E9A66C /* StackADT.cpp */; };
 		410371822C40932D00E9A66C /* StackType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 410371802C40932D00E9A66C /* StackType.cpp */; };
 		412EC6C42C3B3B0D001F99A0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 412EC6C32C3B3B0D001F99A0 /* main.cpp */; };
+		41B488E92C485FFA008EB459 /* QueueADT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B488E72C485FFA008EB459 /* QueueADT.cpp */; };
+		41B488EE2C4861E5008EB459 /* QueueType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B488EC2C4861E5008EB459 /* QueueType.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,6 +38,10 @@
 		4150AB042C38CB98001654D7 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
 		4150AB0A2C38CF3E001654D7 /* libkmodc++.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libkmodc++.a"; path = "usr/lib/libkmodc++.a"; sourceTree = SDKROOT; };
 		4190D7BD2C3B57F300B1D1BC /* ArrayList1.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ArrayList1.hpp; sourceTree = "<group>"; };
+		41B488E72C485FFA008EB459 /* QueueADT.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QueueADT.cpp; sourceTree = "<group>"; };
+		41B488E82C485FFA008EB459 /* QueueADT.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = QueueADT.hpp; sourceTree = "<group>"; };
+		41B488EC2C4861E5008EB459 /* QueueType.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QueueType.cpp; sourceTree = "<group>"; };
+		41B488ED2C4861E5008EB459 /* QueueType.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = QueueType.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,10 +76,10 @@
 			isa = PBXGroup;
 			children = (
 				412EC6C32C3B3B0D001F99A0 /* main.cpp */,
-				412EC6C12C3B380F001F99A0 /* ArrayList.hpp */,
-				4103717E2C40925800E9A66C /* StackADT.hpp */,
-				410371812C40932D00E9A66C /* StackType.hpp */,
-				4190D7BB2C3B57DD00B1D1BC /* ArrayListPractice */,
+				41B488EA2C48600E008EB459 /* Arrays */,
+				41B488EB2C48602D008EB459 /* Queues */,
+				41B488E62C473641008EB459 /* Stacks */,
+				4190D7BB2C3B57DD00B1D1BC /* CPP */,
 			);
 			path = PointersAndArrayBasedLists;
 			sourceTree = "<group>";
@@ -88,14 +94,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4190D7BB2C3B57DD00B1D1BC /* ArrayListPractice */ = {
+		4190D7BB2C3B57DD00B1D1BC /* CPP */ = {
 			isa = PBXGroup;
 			children = (
+				41B488EC2C4861E5008EB459 /* QueueType.cpp */,
+				41B488E72C485FFA008EB459 /* QueueADT.cpp */,
 				410371802C40932D00E9A66C /* StackType.cpp */,
 				4103717D2C40925800E9A66C /* StackADT.cpp */,
+			);
+			path = CPP;
+			sourceTree = "<group>";
+		};
+		41B488E62C473641008EB459 /* Stacks */ = {
+			isa = PBXGroup;
+			children = (
+				4103717E2C40925800E9A66C /* StackADT.hpp */,
+				410371812C40932D00E9A66C /* StackType.hpp */,
+			);
+			path = Stacks;
+			sourceTree = "<group>";
+		};
+		41B488EA2C48600E008EB459 /* Arrays */ = {
+			isa = PBXGroup;
+			children = (
+				412EC6C12C3B380F001F99A0 /* ArrayList.hpp */,
 				4190D7BD2C3B57F300B1D1BC /* ArrayList1.hpp */,
 			);
-			path = ArrayListPractice;
+			path = Arrays;
+			sourceTree = "<group>";
+		};
+		41B488EB2C48602D008EB459 /* Queues */ = {
+			isa = PBXGroup;
+			children = (
+				41B488E82C485FFA008EB459 /* QueueADT.hpp */,
+				41B488ED2C4861E5008EB459 /* QueueType.hpp */,
+			);
+			path = Queues;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +192,8 @@
 				410371822C40932D00E9A66C /* StackType.cpp in Sources */,
 				4103717F2C40925800E9A66C /* StackADT.cpp in Sources */,
 				412EC6C42C3B3B0D001F99A0 /* main.cpp in Sources */,
+				41B488EE2C4861E5008EB459 /* QueueType.cpp in Sources */,
+				41B488E92C485FFA008EB459 /* QueueADT.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
