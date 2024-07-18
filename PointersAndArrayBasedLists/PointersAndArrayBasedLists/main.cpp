@@ -28,8 +28,8 @@ int main() {
 
 void arrayListExample() {
     int size = 100;
-    ArrayListType<int> intList(size);
-    ArrayListType<string> stringList(size);
+    arrayListType<int> intList(size);
+    arrayListType<string> stringList(size);
     
     int number;
     cout << "Enter 5 integers: ";

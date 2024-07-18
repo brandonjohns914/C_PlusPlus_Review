@@ -17,7 +17,7 @@
 using namespace std;
 
 template <class Type>
-class ArrayListType {
+class arrayListType {
     
 protected:
     Type *list;
@@ -28,16 +28,16 @@ protected:
     
 public:
     // constructor
-    ArrayListType(int size = 100);
+    arrayListType(int size = 100);
     
     // copy constructor
-    ArrayListType(const ArrayListType<Type>& otherList);
+    arrayListType(const arrayListType<Type>& otherList);
     
     //destructor
-    ~ArrayListType();
+    ~arrayListType();
     
     //overloading assignment operator and const does not change the objects members
-    const ArrayListType<Type> & operator= (const ArrayListType<Type>& otherList);
+    const arrayListType<Type> & operator= (const arrayListType<Type>& otherList);
     
     // if true list is empty
     bool isEmpty() const;
@@ -99,7 +99,7 @@ public:
 
 
 template<class Type>
-ArrayListType<Type>:: ArrayListType(int size)
+arrayListType<Type>:: arrayListType(int size)
 {
     if (size <0) {
         cerr << "Size must be a positive number" <<endl;
@@ -118,7 +118,7 @@ ArrayListType<Type>:: ArrayListType(int size)
 
 
 template<class Type>
-ArrayListType<Type>:: ArrayListType(const ArrayListType<Type> & otherList){
+arrayListType<Type>:: arrayListType(const arrayListType<Type> & otherList){
     maxSize = otherList.maxSize;
     length = otherList.length;
     list = new Type[maxSize];
@@ -130,12 +130,12 @@ ArrayListType<Type>:: ArrayListType(const ArrayListType<Type> & otherList){
 }
 
 template<class Type>
-ArrayListType<Type>:: ~ArrayListType(){
+arrayListType<Type>:: ~arrayListType(){
     delete [] list;
 }
 
 template<class Type>
-const ArrayListType<Type> & ArrayListType<Type>:: operator= (const ArrayListType<Type>& otherList) {
+const arrayListType<Type> & arrayListType<Type>:: operator= (const arrayListType<Type>& otherList) {
     if (this != &otherList) {
         delete [] list;
         maxSize = otherList.maxSize;
@@ -152,40 +152,40 @@ const ArrayListType<Type> & ArrayListType<Type>:: operator= (const ArrayListType
 
 
 template<class Type>
-bool ArrayListType<Type>:: isEmpty() const
+bool arrayListType<Type>:: isEmpty() const
 {
     return(length == 0);
 }
 
 template<class Type>
-bool ArrayListType<Type>:: isFull() const {
+bool arrayListType<Type>:: isFull() const {
     return(length == maxSize);
 }
 
 template<class Type>
-int ArrayListType<Type>:: listSize() const{
+int arrayListType<Type>:: listSize() const{
     return length;
 }
 
 template<class Type>
-int ArrayListType<Type>:: maxListSize() const{
+int arrayListType<Type>:: maxListSize() const{
     return maxSize;
 }
 
 template<class Type>
-void ArrayListType<Type>:: print() const {
+void arrayListType<Type>:: print() const {
     for (int i = 0; i <length; i++) {
         cout<< list[i] << " " <<endl;
     }
 }
 
 template<class Type>
-bool ArrayListType<Type>:: isItemAtEqual(int location, const Type& item) const{
+bool arrayListType<Type>:: isItemAtEqual(int location, const Type& item) const{
     return(list[location] == item);
 }
 
 template<class Type>
-void ArrayListType<Type>:: insertAt(int location, const Type& insertItem) {
+void arrayListType<Type>:: insertAt(int location, const Type& insertItem) {
     // location cannot be less than zero or larger than the maxsize
     if(location < 0 || location >= maxSize) {
         cerr<< "Position is out of range"<<endl;
@@ -212,7 +212,7 @@ void ArrayListType<Type>:: insertAt(int location, const Type& insertItem) {
 }
 
 template<class Type>
-void ArrayListType<Type>:: insertEnd(const Type& insertItem) {
+void arrayListType<Type>:: insertEnd(const Type& insertItem) {
     // length cannot be larger than maxsize
     if (length >= maxSize) {
         cerr << "List is full" <<endl;
@@ -226,7 +226,7 @@ void ArrayListType<Type>:: insertEnd(const Type& insertItem) {
 }
 
 template<class Type>
-void ArrayListType<Type>:: removeAt(int location) {
+void arrayListType<Type>:: removeAt(int location) {
     if(location < 0 || location >= length) {
         cerr<<"Item is out range" << endl;
     }
@@ -241,7 +241,7 @@ void ArrayListType<Type>:: removeAt(int location) {
 }
 
 template<class Type>
-void ArrayListType<Type>:: retrieveAt(int location, Type& retrieveItem) const {
+void arrayListType<Type>:: retrieveAt(int location, Type& retrieveItem) const {
     if(location < 0 || location >= length) {
         cerr<<"Item is out range" << endl;
     }
@@ -251,7 +251,7 @@ void ArrayListType<Type>:: retrieveAt(int location, Type& retrieveItem) const {
 }
 
 template<class Type>
-void ArrayListType<Type>:: replaceAt(int location, const Type& replaceItem) {
+void arrayListType<Type>:: replaceAt(int location, const Type& replaceItem) {
     if(location < 0 || location >= length) {
         cerr<<"Item is out range" << endl;
     }
@@ -261,12 +261,12 @@ void ArrayListType<Type>:: replaceAt(int location, const Type& replaceItem) {
 }
 
 template<class Type>
-void ArrayListType<Type>:: clearList() {
+void arrayListType<Type>:: clearList() {
     length = 0;
 }
 
 template<class Type>
-int ArrayListType<Type>:: sequentialSearch(const Type& item) const {
+int arrayListType<Type>:: sequentialSearch(const Type& item) const {
     int location;
     bool found = false;
     for (location = 0; location < length; location ++) {
@@ -284,7 +284,7 @@ int ArrayListType<Type>:: sequentialSearch(const Type& item) const {
 }
    
 template<class Type>
-void ArrayListType<Type>:: remove(const Type& removeItem) {
+void arrayListType<Type>:: remove(const Type& removeItem) {
     int location;
    
     if (length == 0) {
@@ -304,7 +304,7 @@ void ArrayListType<Type>:: remove(const Type& removeItem) {
 
 
 template<class Type>
-void ArrayListType<Type>:: insert(const Type& instertItem) {
+void arrayListType<Type>:: insert(const Type& instertItem) {
     int location;
    
     if (length == 0) {
