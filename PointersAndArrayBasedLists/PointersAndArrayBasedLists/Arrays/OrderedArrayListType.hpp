@@ -320,7 +320,7 @@ void orderedArrayListType<Type>:: insertOrdered(const Type& insertItem){
             if(list[mid] < insertItem){
                 mid++;
             }
-            insertAt(mid, insertItem); 
+            insertAt(mid, insertItem);
         }
     }
 }

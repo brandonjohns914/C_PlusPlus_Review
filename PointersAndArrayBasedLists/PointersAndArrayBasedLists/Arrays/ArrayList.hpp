@@ -57,6 +57,9 @@ public:
     //returns true if the item is equal at the location
     bool isItemAtEqual(int location, const Type& item) const;
     
+    // inserts item in the list
+    void insert(const Type& instertItem);
+    
     // inserts an item at a specific location
     void insertAt(int location, const Type& insertItem);
     
@@ -65,6 +68,9 @@ public:
     
     // removes item at that location
     void removeAt(int location);
+    
+    // removes specific item from the list
+    void remove(const Type& removeItem);
     
     // retrieves an item at the location
     void retrieveAt(int location, Type& retrieveItem) const;
@@ -77,13 +83,14 @@ public:
     
     //searches for an item and returns its location
     int sequentialSearch(const Type& item) const;
-        
-    // removes specific item from the list
-    void remove(const Type& removeItem);
     
-    // inserts item in the list
-    void insert(const Type& instertItem);
+    // selection sort
+    int minLocation(int first, int last);
+    void swap(int first, int second);
+    void selectionSort();
     
+    // insertionsort
+    void insertionSort();
 
 };
 
@@ -321,6 +328,61 @@ void arrayListType<Type>:: insert(const Type& instertItem) {
         }
         else {
             cerr << "No duplicate items. Item is already in the list"<< endl;
+        }
+    }
+}
+
+template<class Type>
+int arrayListType<Type>:: minLocation(int first, int last){
+    int minIndex;
+    
+    minIndex = first;
+    
+    for(int location = first + 1; location <= last; location++){
+        if(list[location]< list[minIndex]){
+            minIndex = location;
+        }
+    }
+    
+    return minIndex;
+}
+
+template<class Type>
+void arrayListType<Type>:: swap(int first, int second) {
+    Type temp;
+    temp = list[first];
+    list[first] = list[second];
+    list[second] = temp;
+}
+template<class Type>
+void arrayListType<Type>:: selectionSort() {
+    
+    int minIndex;
+    for(int location = 0; location< length - 1; location++){
+        minIndex = minLocation(location, length -1);
+        swap(location, minIndex);
+    }
+}
+
+template<class Type>
+void arrayListType<Type>:: insertionSort(){
+    int firstOutOfOrder;
+    int location;
+    
+    Type temp;
+    
+    for(firstOutOfOrder = 1; firstOutOfOrder < length; firstOutOfOrder++){
+        if(list[firstOutOfOrder]< list[firstOutOfOrder - 1]){
+            temp = list[firstOutOfOrder];
+            location = firstOutOfOrder;
+            
+            do {
+                list[location] = list[location - 1];
+                location--;
+            }
+            while(location>0 && list[location - 1] > temp);
+            
+            list[location] = temp;
         }
     }
 }
