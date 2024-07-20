@@ -26,6 +26,8 @@ public:
     
     void deleteNode(const Type& deleteItem);
     
+    void linkInsertionSort();
+    
 protected:
     int count;
     
@@ -142,6 +144,52 @@ void unorderedLinkedList<Type>::deleteNode(const Type& deleteItem) {
             } else {
                 // Node to be deleted was not found
                 cout << "Item not found in the list." << endl;
+            }
+        }
+    }
+}
+
+
+template<class Type>
+void unorderedLinkedList<Type>:: linkInsertionSort() {
+    nodeType<Type> *lastInOrder;
+    nodeType<Type> *firstOutOfOrder;
+    nodeType<Type> *current;
+    nodeType<Type> *trailCurrent;
+    
+    lastInOrder = first;
+    if(first == NULL){
+        cerr<< "Cannot sorrt an empty list"<<endl;
+    }
+    else if (first->link == NULL){
+        cout<<"The list of length 1 is already in order"<<endl;
+    }
+    else {
+        while(lastInOrder-> link != NULL){
+            firstOutOfOrder = lastInOrder->link;
+            
+            if(firstOutOfOrder-> info < first-> info){
+                lastInOrder-> link = firstOutOfOrder->link;
+                firstOutOfOrder->link = first;
+                first = firstOutOfOrder;
+            }
+            else {
+                trailCurrent = first;
+                current = first->link;
+                
+                while(current->info < firstOutOfOrder->info){
+                    trailCurrent = current;
+                    current = current->link;
+                }
+                
+                if(current != firstOutOfOrder) {
+                    lastInOrder->link = firstOutOfOrder->link;
+                    firstOutOfOrder->link = current;
+                    trailCurrent->link = firstOutOfOrder;
+                }
+                else {
+                    lastInOrder = lastInOrder->link;
+                }
             }
         }
     }
