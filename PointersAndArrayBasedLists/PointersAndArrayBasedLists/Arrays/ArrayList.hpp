@@ -91,6 +91,10 @@ public:
     
     // insertionsort
     void insertionSort();
+    
+    //shellsort
+    void intervalInsertionSort(int begin, int increment);
+    void shellSort();
 
 };
 
@@ -385,4 +389,33 @@ void arrayListType<Type>:: insertionSort(){
             list[location] = temp;
         }
     }
+}
+
+template<class Type>
+void arrayListType<Type>:: intervalInsertionSort(int begin, int increment){
+    int i;
+    int j;
+    Type temp;
+    for( i = begin + increment; i < length; i += increment) {
+        temp = list[i];
+        
+        for(j = i; j>= increment && list[j - increment]> temp; j -= increment){
+            list[j] = list[j - increment];
+        }
+        
+        list[j] = temp;
+    }
+}
+
+template<class Type>
+void arrayListType<Type>:: shellSort() {
+    int increment;
+    for(increment = 1; increment < (length -1) / 9; increment = 3 * increment + 1);
+    
+    do {
+        for(int begin = 0; begin < increment; begin++) {
+            intervalInsertionSort(begin, increment);
+        }
+        increment = increment / 3;
+    } while(increment > 0); 
 }

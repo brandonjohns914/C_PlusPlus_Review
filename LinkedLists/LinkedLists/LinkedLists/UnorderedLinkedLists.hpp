@@ -191,6 +191,8 @@ void unorderedLinkedList<Type>:: linkInsertionSort() {
                     lastInOrder = lastInOrder->link;
                 }
             }
-        }
+
+
+      }
     }
 }
