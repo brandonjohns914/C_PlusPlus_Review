@@ -86,7 +86,7 @@ public:
     
     // selection sort
     int minLocation(int first, int last);
-    void swap(int first, int second);
+    void swapSelectionSort(int first, int second);
     void selectionSort();
     
     // insertionsort
@@ -96,6 +96,12 @@ public:
     void intervalInsertionSort(int begin, int increment);
     void shellSort();
 
+    //quicksort
+    void swapQuickSort(int first, int second);
+    int partition(int first, int last);
+    void recursiveQuickSort(int first, int last);
+    void quickSort();
+    
 };
 
 #endif /* ArrayList_hpp */
@@ -352,7 +358,7 @@ int arrayListType<Type>:: minLocation(int first, int last){
 }
 
 template<class Type>
-void arrayListType<Type>:: swap(int first, int second) {
+void arrayListType<Type>:: swapSelectionSort(int first, int second) {
     Type temp;
     temp = list[first];
     list[first] = list[second];
@@ -417,5 +423,51 @@ void arrayListType<Type>:: shellSort() {
             intervalInsertionSort(begin, increment);
         }
         increment = increment / 3;
-    } while(increment > 0); 
+    } while(increment > 0);
+}
+
+template<class Type>
+void arrayListType<Type>:: swapQuickSort(int first, int second) {
+    Type temp;
+    temp = list[first];
+    list[first] = list[second];
+    list[second] = temp;
+}
+
+template<class Type>
+int arrayListType<Type>:: partition(int first, int last){
+    Type pivot;
+    int index;
+    int smallIndex;
+    
+    swapQuickSort(first, (first + last) / 2);
+    pivot = list[first];
+    smallIndex = first;
+    
+    for (index = first + 1; index <= last; index++) {
+        if(list[index]< pivot) {
+            smallIndex++;
+            swapQuickSort(smallIndex, index);
+        }
+    }
+    
+    swapQuickSort(first, smallIndex);
+    
+    return smallIndex;
+}
+
+template<class Type>
+void arrayListType<Type>:: recursiveQuickSort(int first, int last) {
+    int pivotLocation;
+    
+    if(first < last) {
+        pivotLocation = partition(first, last);
+        recursiveQuickSort(first, pivotLocation - 1);
+        recursiveQuickSort(pivotLocation + 1, last);
+    }
+}
+
+template<class Type>
+void arrayListType<Type>::  quickSort() {
+    recursiveQuickSort(0, length -1);
 }
