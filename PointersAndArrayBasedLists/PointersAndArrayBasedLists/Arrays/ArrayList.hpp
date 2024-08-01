@@ -102,6 +102,11 @@ public:
     void recursiveQuickSort(int first, int last);
     void quickSort();
     
+    
+    //heap
+    void heapify(int low, int high);
+    void buildHeap();
+    void heapSort();
 };
 
 #endif /* ArrayList_hpp */
@@ -468,4 +473,47 @@ void arrayListType<Type>:: recursiveQuickSort(int first, int last) {
 template<class Type>
 void arrayListType<Type>::  quickSort() {
     recursiveQuickSort(0, length -1);
+}
+
+template<class Type>
+void arrayListType<Type>:: heapify(int low, int high) {
+    int largeIndex;
+    Type temp = list[low];
+    largeIndex = 2 * low + 1;
+    while(largeIndex <= high) {
+        if (largeIndex < high) {
+            if (list[largeIndex] < list[largeIndex + 1]){
+                largeIndex = largeIndex + 1;
+            }
+        }
+        if(temp > list[largeIndex]){
+            break;
+        }
+        else {
+            list[low] = list[largeIndex];
+            low = largeIndex;
+            largeIndex = 2 * low + 1;
+        }
+    }
+    list[low] = temp;
+}
+
+template <class Type>
+void arrayListType<Type>:: buildHeap() {
+    for(int index = length / 2 - 1; index >= 0; index--){
+        heapify(index, length -1);
+    }
+}
+
+template <class Type>
+void arrayListType<Type>:: heapSort() {
+    Type temp;
+    buildHeap();
+    
+    for(int lastOutOfOrder = length -1; lastOutOfOrder >= 0; lastOutOfOrder--) {
+        temp = list[lastOutOfOrder];
+        list[lastOutOfOrder] = list[0];
+        list[0] = temp;
+        heapify(0, lastOutOfOrder - 1);
+    }
 }
