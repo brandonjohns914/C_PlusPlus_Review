@@ -21,7 +21,6 @@ public:
     virtual void push(const Type& newItem ) = 0;
     virtual Type top() const = 0;
     virtual void pop() = 0;
-    
 };
 
 #endif /* StackADT_hpp */

@@ -450,9 +450,7 @@ int arrayListType<Type>:: partition(int first, int last){
             swapQuickSort(smallIndex, index);
         }
     }
-    
     swapQuickSort(first, smallIndex);
-    
     return smallIndex;
 }
 

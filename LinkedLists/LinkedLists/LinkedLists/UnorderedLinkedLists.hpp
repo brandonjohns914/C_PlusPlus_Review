@@ -28,6 +28,13 @@ public:
     
     void linkInsertionSort();
     
+    void divideList(nodeType<Type> *first1, nodeType<Type> *&first2);
+    
+    nodeType<Type> * mergeList(nodeType<Type> *first1, nodeType<Type> *first2);
+    
+    void recursiveMergeSort(nodeType<Type>* &head);
+    void mergeSort();
+    
 protected:
     int count;
     
@@ -194,5 +201,110 @@ void unorderedLinkedList<Type>:: linkInsertionSort() {
 
 
       }
+    }
+}
+
+template <class Type>
+void unorderedLinkedList<Type>:: divideList(nodeType<Type> *first1, nodeType<Type> *&first2){
+    nodeType<Type> *middle;
+    nodeType<Type> *current;
+    
+    if(first1 == NULL){
+        first2 = NULL;
+    }
+    else if(first1->link == NULL){
+        first2 = NULL;
+    }
+    else {
+        middle = first1;
+        current = first1->link;
+        
+        if(current != NULL){
+            current = current->link;
+        }
+        while(current != NULL) {
+            middle = middle->link;
+            current = current->link;
+            if(current != NULL){
+                current = current->link;
+            }
+        }
+        
+        first2 = middle->link;
+        middle->link = NULL;
+    }
+}
+
+template <class Type>
+nodeType<Type>* unorderedLinkedList<Type>:: mergeList(nodeType<Type> *first1, nodeType<Type> *first2) {
+    nodeType<Type> *lastSmall;
+    nodeType<Type> *newHead;
+    
+    if (first1 == NULL){
+        return first2;
+    }
+    else if(first2 == NULL){
+        return first1;
+    }
+    else {
+        if (first1->info < first2->info){
+            newHead = first1;
+            first1= first1->link;
+            lastSmall = newHead;
+        }
+        else {
+            newHead = first2;
+            first2 = first2->link;
+            lastSmall = newHead;
+        }
+        
+        while(first1 != NULL && first2 != NULL){
+            
+            if (first1->info < first2->info){
+                lastSmall->link = first1;
+                lastSmall = lastSmall->link;
+                first1 = first1->link;
+            }
+            else {
+                lastSmall->link = first2;
+                lastSmall = lastSmall->link;
+                first2 = first2->link;
+            }
+        }
+        
+        if(first1==NULL){
+            lastSmall->link = first2;
+        }
+        else {
+            lastSmall->link = first1;
+        }
+        return newHead;
+    }
+}
+
+template <class Type>
+void unorderedLinkedList<Type>:: recursiveMergeSort(nodeType<Type>* &head){
+    nodeType<Type> *otherHead;
+    if(head!= NULL) {
+        if(head->link != NULL){
+            divideList(head, otherHead);
+            recursiveMergeSort(head);
+            recursiveMergeSort(otherHead);
+            head = mergeList(head, otherHead);
+        }
+    }
+}
+
+template <class Type>
+void unorderedLinkedList<Type>:: mergeSort(){
+    recursiveMergeSort(first);
+    if(first == NULL) {
+        last = NULL;
+    }
+    else {
+        last = first;
+        while(last->link != NULL){
+            last = last->link;
+        }
     }
 }
