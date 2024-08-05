@@ -10,7 +10,6 @@
 
 #include <stdio.h>
 #include <iostream>
-#include "LinkedListIterator.hpp"
 #include "BinaryTreeNode.hpp"
 #include "NodeType.hpp"
 #include <cassert>
@@ -20,13 +19,12 @@ template <class Type>
 class binaryTreeType {
 public:
     
-    
-    const binaryTreeType<Type> & operator = (const binaryTreeType<Type> & otherTree);
-    
     bool isEmpty() const;
     void inorderTraversal() const;
     void preorderTraversal() const;
     void postorderTraversal() const;
+    
+    void nonRecurisveInTraversal() const; 
     
     int treeHeight() const;
     int treeNodeCount() const;
@@ -38,6 +36,8 @@ public:
     binaryTreeType();
     ~binaryTreeType();
     
+    const binaryTreeType<Type> & operator = (const binaryTreeType<Type> & otherTree);
+
 protected:
     binaryTreeNode<Type> *root;
 
@@ -238,5 +238,5 @@ const binaryTreeType<Type> & binaryTreeType<Type>:: operator = (const binaryTree
         }
     }
     
-    return *this; 
+    return *this;
 }
