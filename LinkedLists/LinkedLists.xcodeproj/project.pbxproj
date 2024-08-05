@@ -10,6 +10,8 @@
 		41B488E12C472962008EB459 /* LinkedStackType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B488DF2C472962008EB459 /* LinkedStackType.cpp */; };
 		41B488E42C4731B8008EB459 /* UnorderedLinkedStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B488E22C4731B8008EB459 /* UnorderedLinkedStack.cpp */; };
 		41B488F52C487B3F008EB459 /* LinkedQueueType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41B488F32C487B3F008EB459 /* LinkedQueueType.cpp */; };
+		41CF69AF2C616BBC0057140D /* BinaryTrees.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41CF69AD2C616BBC0057140D /* BinaryTrees.cpp */; };
+		41CF69B22C616BE40057140D /* BinaryTreeNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41CF69B02C616BE40057140D /* BinaryTreeNode.cpp */; };
 		41F9B1EF2C3DFED600DFA60C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41F9B1EE2C3DFED600DFA60C /* main.cpp */; };
 		41F9B1FA2C3E0AAD00DFA60C /* LinkedListIterator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41F9B1F82C3E0AAD00DFA60C /* LinkedListIterator.cpp */; };
 		41F9B1FE2C3E0E8600DFA60C /* LinkedListType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41F9B1FC2C3E0E8600DFA60C /* LinkedListType.cpp */; };
@@ -39,6 +41,10 @@
 		41B488F32C487B3F008EB459 /* LinkedQueueType.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LinkedQueueType.cpp; sourceTree = "<group>"; };
 		41B488F42C487B3F008EB459 /* LinkedQueueType.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LinkedQueueType.hpp; sourceTree = "<group>"; };
 		41B488F72C487BA4008EB459 /* QueueADT.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = QueueADT.hpp; sourceTree = "<group>"; };
+		41CF69AD2C616BBC0057140D /* BinaryTrees.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BinaryTrees.cpp; sourceTree = "<group>"; };
+		41CF69AE2C616BBC0057140D /* BinaryTrees.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BinaryTrees.hpp; sourceTree = "<group>"; };
+		41CF69B02C616BE40057140D /* BinaryTreeNode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BinaryTreeNode.cpp; sourceTree = "<group>"; };
+		41CF69B12C616BE40057140D /* BinaryTreeNode.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BinaryTreeNode.hpp; sourceTree = "<group>"; };
 		41F9B1EB2C3DFED600DFA60C /* LinkedLists */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LinkedLists; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F9B1EE2C3DFED600DFA60C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		41F9B1F82C3E0AAD00DFA60C /* LinkedListIterator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LinkedListIterator.cpp; sourceTree = "<group>"; };
@@ -92,6 +98,15 @@
 			path = Queues;
 			sourceTree = "<group>";
 		};
+		41CF69AC2C616BA20057140D /* BinaryTrees */ = {
+			isa = PBXGroup;
+			children = (
+				41CF69B12C616BE40057140D /* BinaryTreeNode.hpp */,
+				41CF69AE2C616BBC0057140D /* BinaryTrees.hpp */,
+			);
+			path = BinaryTrees;
+			sourceTree = "<group>";
+		};
 		41F9B1E22C3DFED600DFA60C = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +128,7 @@
 			children = (
 				41F9B1EE2C3DFED600DFA60C /* main.cpp */,
 				41B488DD2C472914008EB459 /* NodeType.hpp */,
+				41CF69AC2C616BA20057140D /* BinaryTrees */,
 				41B488F62C487B59008EB459 /* Queues */,
 				41B488EF2C487AD3008EB459 /* LinkedLists */,
 				41B488E52C473617008EB459 /* Stacks */,
@@ -124,8 +140,10 @@
 		41F9B1FB2C3E0AB600DFA60C /* CPP */ = {
 			isa = PBXGroup;
 			children = (
+				41CF69B02C616BE40057140D /* BinaryTreeNode.cpp */,
 				41B488E22C4731B8008EB459 /* UnorderedLinkedStack.cpp */,
 				41B488DF2C472962008EB459 /* LinkedStackType.cpp */,
+				41CF69AD2C616BBC0057140D /* BinaryTrees.cpp */,
 				41F9B2022C3F58D900DFA60C /* OrderedLinkedLists.cpp */,
 				41F9B1FF2C3F4E1100DFA60C /* UnorderedLinkedLists.cpp */,
 				41F9B1FC2C3E0E8600DFA60C /* LinkedListType.cpp */,
@@ -200,6 +218,8 @@
 				41F9B2042C3F58D900DFA60C /* OrderedLinkedLists.cpp in Sources */,
 				41F9B1EF2C3DFED600DFA60C /* main.cpp in Sources */,
 				41F9B2012C3F4E1100DFA60C /* UnorderedLinkedLists.cpp in Sources */,
+				41CF69B22C616BE40057140D /* BinaryTreeNode.cpp in Sources */,
+				41CF69AF2C616BBC0057140D /* BinaryTrees.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
