@@ -13,6 +13,8 @@
 		41CF69AF2C616BBC0057140D /* BinaryTrees.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41CF69AD2C616BBC0057140D /* BinaryTrees.cpp */; };
 		41CF69B22C616BE40057140D /* BinaryTreeNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41CF69B02C616BE40057140D /* BinaryTreeNode.cpp */; };
 		41CF69B52C61874A0057140D /* BinarySearchTrees.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41CF69B32C61874A0057140D /* BinarySearchTrees.cpp */; };
+		41CF69B82C618F820057140D /* BTrees.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41CF69B62C618F820057140D /* BTrees.cpp */; };
+		41CF69BB2C6190700057140D /* BTreeNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41CF69B92C6190700057140D /* BTreeNode.cpp */; };
 		41F9B1EF2C3DFED600DFA60C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41F9B1EE2C3DFED600DFA60C /* main.cpp */; };
 		41F9B1FA2C3E0AAD00DFA60C /* LinkedListIterator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41F9B1F82C3E0AAD00DFA60C /* LinkedListIterator.cpp */; };
 		41F9B1FE2C3E0E8600DFA60C /* LinkedListType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41F9B1FC2C3E0E8600DFA60C /* LinkedListType.cpp */; };
@@ -48,6 +50,10 @@
 		41CF69B12C616BE40057140D /* BinaryTreeNode.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BinaryTreeNode.hpp; sourceTree = "<group>"; };
 		41CF69B32C61874A0057140D /* BinarySearchTrees.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BinarySearchTrees.cpp; sourceTree = "<group>"; };
 		41CF69B42C61874A0057140D /* BinarySearchTrees.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BinarySearchTrees.hpp; sourceTree = "<group>"; };
+		41CF69B62C618F820057140D /* BTrees.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BTrees.cpp; sourceTree = "<group>"; };
+		41CF69B72C618F820057140D /* BTrees.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BTrees.hpp; sourceTree = "<group>"; };
+		41CF69B92C6190700057140D /* BTreeNode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BTreeNode.cpp; sourceTree = "<group>"; };
+		41CF69BA2C6190700057140D /* BTreeNode.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BTreeNode.hpp; sourceTree = "<group>"; };
 		41F9B1EB2C3DFED600DFA60C /* LinkedLists */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LinkedLists; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F9B1EE2C3DFED600DFA60C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		41F9B1F82C3E0AAD00DFA60C /* LinkedListIterator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LinkedListIterator.cpp; sourceTree = "<group>"; };
@@ -107,6 +113,8 @@
 				41CF69B12C616BE40057140D /* BinaryTreeNode.hpp */,
 				41CF69AE2C616BBC0057140D /* BinaryTrees.hpp */,
 				41CF69B42C61874A0057140D /* BinarySearchTrees.hpp */,
+				41CF69BA2C6190700057140D /* BTreeNode.hpp */,
+				41CF69B72C618F820057140D /* BTrees.hpp */,
 			);
 			path = BinaryTrees;
 			sourceTree = "<group>";
@@ -144,6 +152,7 @@
 		41F9B1FB2C3E0AB600DFA60C /* CPP */ = {
 			isa = PBXGroup;
 			children = (
+				41CF69B62C618F820057140D /* BTrees.cpp */,
 				41CF69B32C61874A0057140D /* BinarySearchTrees.cpp */,
 				41CF69B02C616BE40057140D /* BinaryTreeNode.cpp */,
 				41B488E22C4731B8008EB459 /* UnorderedLinkedStack.cpp */,
@@ -154,6 +163,7 @@
 				41F9B1FC2C3E0E8600DFA60C /* LinkedListType.cpp */,
 				41F9B1F82C3E0AAD00DFA60C /* LinkedListIterator.cpp */,
 				41B488F32C487B3F008EB459 /* LinkedQueueType.cpp */,
+				41CF69B92C6190700057140D /* BTreeNode.cpp */,
 			);
 			path = CPP;
 			sourceTree = "<group>";
@@ -221,8 +231,10 @@
 				41B488F52C487B3F008EB459 /* LinkedQueueType.cpp in Sources */,
 				41B488E12C472962008EB459 /* LinkedStackType.cpp in Sources */,
 				41F9B1FA2C3E0AAD00DFA60C /* LinkedListIterator.cpp in Sources */,
+				41CF69BB2C6190700057140D /* BTreeNode.cpp in Sources */,
 				41F9B2042C3F58D900DFA60C /* OrderedLinkedLists.cpp in Sources */,
 				41F9B1EF2C3DFED600DFA60C /* main.cpp in Sources */,
+				41CF69B82C618F820057140D /* BTrees.cpp in Sources */,
 				41F9B2012C3F4E1100DFA60C /* UnorderedLinkedLists.cpp in Sources */,
 				41CF69B22C616BE40057140D /* BinaryTreeNode.cpp in Sources */,
 				41CF69AF2C616BBC0057140D /* BinaryTrees.cpp in Sources */,

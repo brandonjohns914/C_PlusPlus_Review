@@ -29,6 +29,7 @@ private:
 
 protected:
     binaryTreeNode<Type> * root;
+    
 };
 
 #endif /* BinarySearchTrees_hpp */

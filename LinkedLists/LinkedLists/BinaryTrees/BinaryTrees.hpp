@@ -13,7 +13,8 @@
 #include "BinaryTreeNode.hpp"
 #include "NodeType.hpp"
 #include <cassert>
-using namespace std; 
+
+using namespace std;
 
 template <class Type>
 class binaryTreeType {
@@ -24,7 +25,7 @@ public:
     void preorderTraversal() const;
     void postorderTraversal() const;
     
-    void nonRecurisveInTraversal() const; 
+    
     
     int treeHeight() const;
     int treeNodeCount() const;
@@ -40,7 +41,7 @@ public:
 
 protected:
     binaryTreeNode<Type> *root;
-
+    binaryTreeNode<Type> *stackType;
 private:
     void copyTree(binaryTreeNode<Type> * &copiedTreeRoot, binaryTreeNode<Type>* otherTreeRoot);
     void destory(binaryTreeNode<Type>* &p);
@@ -240,3 +241,5 @@ const binaryTreeType<Type> & binaryTreeType<Type>:: operator = (const binaryTree
     
     return *this;
 }
+
+
